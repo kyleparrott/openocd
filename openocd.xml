@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type='text/xsl' href='interface.xsl'?>
+<interface uri="https://raw.githubusercontent.com/kyleparrott/openocd/master/openocd.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+    <name>openocd</name>
+    <summary>On Chip Debugger</summary>
+    <description>
+      This is the openocd description
+    </description>
+
+    <homepage>http://openocd.org/</homepage>
+    <group main="openocd">
+        <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/openocd-tcl/master/openocd-tcl.xml">
+            <!-- The openocd scripts are identical between mac os and linux so they are added as their own
+                 dependency. They exist in the tcl directory when the openocd-tcl script is unzipped. The
+                 following line sets the environment variable OPENOCD_SCRIPT_PATH to
+                 "openocd-tcl implementation directory"/tcl -->
+            <environment insert="tcl" mode="prepend" name="OPENOCD_SCRIPT_PATH"/>
+        </requires>
+        <group arch="MacOSX-*">
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb0.1.4/master/libusb.xml">
+                <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb1.0.0/master/libusb.xml">
+                <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libftdi/master/libftdi.xml">
+                <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libhidapi/master/libhidapi.xml">
+                <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
+            </requires>
+            <implementation id="sha1=9818c323cf742cbc718a1302da89f60edadbd291" version="0.0">
+                    <archive href="https://raw.githubusercontent.com/kyleparrott/openocd/master/macos/openocd.zip" size="1501670"/>
+            </implementation>
+        </group>
+        <group arch="Linux-*">
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libftdi/master/libftdi.xml">
+                <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libhidapi/master/libhidapi.xml">
+                <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
+            </requires>
+            <implementation id="sha1=c8f3a3cd3d9b3f72c95f25e8f7e7ab3b3572a5d3" version="0.0">
+                <archive href="https://raw.githubusercontent.com/kyleparrott/linux/openocd.zip" size="799562"/>
+            </implementation>
+        </group>
+        <command name="run" path="openocd"> <!-- run is the default command 0install runs-->
+            <arg>-s</arg>
+            <arg>${OPENOCD_SCRIPT_PATH}</arg>
+            <!-- The openocd -s argument lets you specify a non-standard tcl script directory which is held in
+                 OPENOCD_SCRIPT_PATH environment variable we set above-->
+        </command>
+    </group>
+</interface>
+<!-- Base64 Signature
+iQIcBAABCgAGBQJX9VmiAAoJEJzS+Pb4kyScu8gP+wbIzKCTE3JevmdlrY4bkU/zAJErqAk4VPgn
+djpLIRabmbgxSNxwCdqIkgzI6y16WX6qxYcGBREo0tyBvz1Qi+K/0c9oDtMUHrtQWnNUCmQwqXW4
+IwPcO39OojbDOVc/30efx7D2VhIS3+jpFwENFD130PjBJyriRZS0YIvGh3z8NqHEJIypnCuaNDG9
+C2Y5MurCwsI8R7UwZ/bqO5cx4jDoFlrV7XkG8pCIZ8wn+aqqOYkdZnYsTJCwuocqGKGjSyKWaJqG
+Zw63s36FE37NdPPTA28/Y2k4mSbnJkzprkH8myFCbIaQlGKj7DTItQ/CR4cWaEABkwE4L/8sOaIy
+YpyRsAG2ru75zBJzy60PzVaBcjD/yj/CTuVnhp5NkcqZkbadCFiew94f9jMlE/u0/9eP8JOBeBlZ
+OrrGhG64IZ7J3PMvgUr1QwxRc9+bCVJ7mvPYc0sFuzbu4ENt7hJhzlNe04ujFOfJff/WVIM9S5h9
+1h8ju2flFJgP0M5vaRdtWBl4ZIx2P+t7X1Dw6LX/IS9unMyQsXujUTfuaRCcPonjri/MA8Ig83Ve
+m13NsXzcehYuVIXRCasBxTFUmhYyH4oUonc6IyvfAnQCgYGl9C7SH7lS7YRrPgi2ZPL7z7IzYNDo
+ySDCBgqambBSAI2qTquPCsltRSbyWMeU9UcCAeuI
+
+-->
