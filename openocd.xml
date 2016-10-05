@@ -41,7 +41,7 @@
                 <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
             </requires>
             <implementation id="sha1=c8f3a3cd3d9b3f72c95f25e8f7e7ab3b3572a5d3" version="0.0">
-                <archive href="https://raw.githubusercontent.com/kyleparrott/linux/openocd.zip" size="799562"/>
+                <archive href="https://raw.githubusercontent.com/kyleparrott/openocd/master/linux/openocd.zip" size="799562"/>
             </implementation>
         </group>
         <command name="run" path="openocd"> <!-- run is the default command 0install runs-->
@@ -53,15 +53,15 @@
     </group>
 </interface>
 <!-- Base64 Signature
-iQIcBAABCgAGBQJX9VmiAAoJEJzS+Pb4kyScu8gP+wbIzKCTE3JevmdlrY4bkU/zAJErqAk4VPgn
-djpLIRabmbgxSNxwCdqIkgzI6y16WX6qxYcGBREo0tyBvz1Qi+K/0c9oDtMUHrtQWnNUCmQwqXW4
-IwPcO39OojbDOVc/30efx7D2VhIS3+jpFwENFD130PjBJyriRZS0YIvGh3z8NqHEJIypnCuaNDG9
-C2Y5MurCwsI8R7UwZ/bqO5cx4jDoFlrV7XkG8pCIZ8wn+aqqOYkdZnYsTJCwuocqGKGjSyKWaJqG
-Zw63s36FE37NdPPTA28/Y2k4mSbnJkzprkH8myFCbIaQlGKj7DTItQ/CR4cWaEABkwE4L/8sOaIy
-YpyRsAG2ru75zBJzy60PzVaBcjD/yj/CTuVnhp5NkcqZkbadCFiew94f9jMlE/u0/9eP8JOBeBlZ
-OrrGhG64IZ7J3PMvgUr1QwxRc9+bCVJ7mvPYc0sFuzbu4ENt7hJhzlNe04ujFOfJff/WVIM9S5h9
-1h8ju2flFJgP0M5vaRdtWBl4ZIx2P+t7X1Dw6LX/IS9unMyQsXujUTfuaRCcPonjri/MA8Ig83Ve
-m13NsXzcehYuVIXRCasBxTFUmhYyH4oUonc6IyvfAnQCgYGl9C7SH7lS7YRrPgi2ZPL7z7IzYNDo
-ySDCBgqambBSAI2qTquPCsltRSbyWMeU9UcCAeuI
+iQIcBAABCgAGBQJX9WY1AAoJEJzS+Pb4kyScKDUP+wQysJDMD1dnGVIkhXPc6YA39y1h0xv+uM5R
+7pEERTbhwWpjNC4+Dqtlr2DqroJQuJ5spO0xlXSZp1NztHqdpjs7cwb6mQ2YzP5XxpSY8vyX5iFj
+F5LrmmLipeliY8bRYOc79wPw1Y7tuARlMEdDdcV+CduREX/bohad2zE1PFnbnuMEJB/E++gIWwMF
++T3s0o/t8HB2e3o442CqihwBy2ZSqKS+gIlLGAUK19x/YzzFn+KXwFuq/GO5VL+WfjMDsRflQclh
+sn/DPBaSaJ+F+IK6i3/U1MlfZhQv8uoR/TsqsoAz10Iexwug8F+qa7TQQszV1LGHw0zeB/jjDj/D
+If/WX2IjU12o3dr8m31eeK25NDTwZvaSB82nKGLHVRB4dfwLeX6Ndy1EoyLp3QTSA+ujzBRkprkO
+NjBXjgpUK1Ewj6ZeUpDWaplyDQzgdLSIY8/zCyHjFB0fktHIvnjQYODlED5RaaU6weV3DRkgUiDq
++2Et1YXCWaU/CrWueRq5yW1JE4FE0lJ5j+/r5ObP1f/B5RSoK10a+8jq4rMh001fw26zzi4niiTY
++8hitG4BYkJvXFfMYkISh/jEPZZhLhya0h35BwTwIzgVK5Z+BS+yDAly+Q2pNUJHvjnZ0a5b0iA1
+L3AOHvzYuiQb7AeTsZbbYAHG5bo4ZQWosDF0ze+I
 
 -->
