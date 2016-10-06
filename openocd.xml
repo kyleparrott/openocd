@@ -17,10 +17,11 @@
             <environment insert="tcl" mode="prepend" name="OPENOCD_SCRIPT_PATH"/>
         </requires>
         <group arch="MacOSX-*">
-            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb0.1.4/master/libusb.xml">
+            <!-- yes, openocd requires 2 versions of libusb on macos -->
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb/master/libusb.xml" version="0.1.4">
                 <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
             </requires>
-            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb1.0.0/master/libusb.xml">
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb/master/libusb.xml" version="1.0.0">
                 <environment insert="" mode="prepend" name="DYLD_LIBRARY_PATH"/>
             </requires>
             <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libftdi/master/libftdi.xml">
@@ -40,6 +41,15 @@
             <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libhidapi/master/libhidapi.xml">
                 <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
             </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libjim/master/libjim.xml">
+                <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libusb/master/libusb.xml">
+                <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
+            </requires>
+            <requires importance="required" interface="https://raw.githubusercontent.com/kyleparrott/libudev/master/libudev.xml">
+                <environment insert="" mode="prepend" name="LD_LIBRARY_PATH"/>
+            </requires>
             <implementation id="sha1=c8f3a3cd3d9b3f72c95f25e8f7e7ab3b3572a5d3" version="0.0">
                 <archive href="https://raw.githubusercontent.com/kyleparrott/openocd/master/linux/openocd.zip" size="799562"/>
             </implementation>
@@ -53,15 +63,15 @@
     </group>
 </interface>
 <!-- Base64 Signature
-iQIcBAABCgAGBQJX9WY1AAoJEJzS+Pb4kyScKDUP+wQysJDMD1dnGVIkhXPc6YA39y1h0xv+uM5R
-7pEERTbhwWpjNC4+Dqtlr2DqroJQuJ5spO0xlXSZp1NztHqdpjs7cwb6mQ2YzP5XxpSY8vyX5iFj
-F5LrmmLipeliY8bRYOc79wPw1Y7tuARlMEdDdcV+CduREX/bohad2zE1PFnbnuMEJB/E++gIWwMF
-+T3s0o/t8HB2e3o442CqihwBy2ZSqKS+gIlLGAUK19x/YzzFn+KXwFuq/GO5VL+WfjMDsRflQclh
-sn/DPBaSaJ+F+IK6i3/U1MlfZhQv8uoR/TsqsoAz10Iexwug8F+qa7TQQszV1LGHw0zeB/jjDj/D
-If/WX2IjU12o3dr8m31eeK25NDTwZvaSB82nKGLHVRB4dfwLeX6Ndy1EoyLp3QTSA+ujzBRkprkO
-NjBXjgpUK1Ewj6ZeUpDWaplyDQzgdLSIY8/zCyHjFB0fktHIvnjQYODlED5RaaU6weV3DRkgUiDq
-+2Et1YXCWaU/CrWueRq5yW1JE4FE0lJ5j+/r5ObP1f/B5RSoK10a+8jq4rMh001fw26zzi4niiTY
-+8hitG4BYkJvXFfMYkISh/jEPZZhLhya0h35BwTwIzgVK5Z+BS+yDAly+Q2pNUJHvjnZ0a5b0iA1
-L3AOHvzYuiQb7AeTsZbbYAHG5bo4ZQWosDF0ze+I
+iQIcBAABCgAGBQJX9pTAAAoJEJzS+Pb4kySc1i0QAITQN1TOVDti6TQ/YJnKPKAnelY8ERHE3MXc
+AXOYEtFHzBAXRp0uV3+Cj1ZDWLc0P+5OWMYCIPU7vUbwqanMwr800xOcBtzxEenxhnW/eNoWtWD6
+xvHxS7Fg0oG3ZiXHHX6SnDRLWt1ZJwGmBsks7EUtNIkL6VgezKIvpRbELW64XCo7tRMM1cyNhOzw
+fUca91C7F0S2sDq6fjffdCnsNYn73AH5gwIOOxf4Gt4kXxWMIYwcLleZkkLPM3S9NKwLetdixd5x
+EJBfgSU8h4NA0pOKxAtlfpPmcVxR/RWufUkficjzAZvkqppP3RNczZrCGSKVlTDfejldVYEW2F3V
+jyCIpae0i+D+avqU0mJocFsXCcI8C8IzwAot2AoHPuW2mlJUEsiV93gFes8y02ojdNd4hf4Z25Hw
+zKTtwGGwdXjlN5tMSWzmEaaavOOWZLkDYasRgw3OX2Y8PCIW9ZzT24rQHGCmHs8CBlr0J2RKPqHb
+em3jGqAcqixoC9PeWT8kRcBq4dTj4QxKuzC243DDTN9Y6vpT49ULA3VgVLkZyjKDEec6RS3okSUn
+LgALaWENg/iCvrYj0z7Q0w3N+zVqbZMl4RjRAzh7isAi+r/bpy1F3YxOpUPL8wEYquIGybsa2iLT
+T3kuQ2V1ZXMhCwG/WRzsBP0koIBjl0FQ6wMdghNR
 
 -->
